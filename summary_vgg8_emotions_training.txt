@@ -1,0 +1,560 @@
+Config -----
+name: emotions_vgg8_3d
+arch: vgg8
+num_features: 3
+scheduler: CosineAnnealing
+epochs: 100
+batch_size: 128
+optimizer: SGD
+lr: 0.1
+min_lr: 0.001
+momentum: 0.5
+------------
+Model: "model_2"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_2 (InputLayer)         (None, 48, 48, 1)         0         
+_________________________________________________________________
+conv2d_7 (Conv2D)            (None, 48, 48, 16)        160       
+_________________________________________________________________
+activation_7 (Activation)    (None, 48, 48, 16)        0         
+_________________________________________________________________
+conv2d_8 (Conv2D)            (None, 48, 48, 16)        2320      
+_________________________________________________________________
+activation_8 (Activation)    (None, 48, 48, 16)        0         
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 24, 24, 16)        0         
+_________________________________________________________________
+conv2d_9 (Conv2D)            (None, 24, 24, 32)        4640      
+_________________________________________________________________
+activation_9 (Activation)    (None, 24, 24, 32)        0         
+_________________________________________________________________
+conv2d_10 (Conv2D)           (None, 24, 24, 32)        9248      
+_________________________________________________________________
+activation_10 (Activation)   (None, 24, 24, 32)        0         
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 12, 12, 32)        0         
+_________________________________________________________________
+conv2d_11 (Conv2D)           (None, 12, 12, 64)        18496     
+_________________________________________________________________
+activation_11 (Activation)   (None, 12, 12, 64)        0         
+_________________________________________________________________
+conv2d_12 (Conv2D)           (None, 12, 12, 64)        36928     
+_________________________________________________________________
+activation_12 (Activation)   (None, 12, 12, 64)        0         
+_________________________________________________________________
+max_pooling2d_6 (MaxPooling2 (None, 6, 6, 64)          0         
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 6, 6, 64)          0         
+_________________________________________________________________
+flatten_2 (Flatten)          (None, 2304)              0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 3)                 6915      
+_________________________________________________________________
+dense_4 (Dense)              (None, 8)                 32        
+=================================================================
+Total params: 78,739
+Trainable params: 78,739
+Non-trainable params: 0
+_________________________________________________________________
+Train on 25045 samples, validate on 3137 samples
+
+_________________________________________________________________
+Train on 25045 samples, validate on 3137 samples
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.8751 - accuracy: 0.7119 - val_loss: 0.9609 - val_accuracy: 0.6882
+
+Epoch 00018: val_loss did not improve from 0.90571
+Epoch 19/100
+
+Epoch 00019: CosineAnnealingScheduler setting learning rate to 0.09229423231234975.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.8569 - accuracy: 0.7188 - val_loss: 0.9251 - val_accuracy: 0.7042
+
+Epoch 00019: val_loss did not improve from 0.90571
+Epoch 20/100
+
+Epoch 00020: CosineAnnealingScheduler setting learning rate to 0.0914404884265908.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.8435 - accuracy: 0.7210 - val_loss: 0.9088 - val_accuracy: 0.7169
+
+Epoch 00020: val_loss did not improve from 0.90571
+Epoch 21/100
+
+Epoch 00021: CosineAnnealingScheduler setting learning rate to 0.0905463412215599.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.8284 - accuracy: 0.7271 - val_loss: 0.9231 - val_accuracy: 0.6978
+
+Epoch 00021: val_loss did not improve from 0.90571
+Epoch 22/100
+
+Epoch 00022: CosineAnnealingScheduler setting learning rate to 0.08961267311259669.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.8150 - accuracy: 0.7326 - val_loss: 0.8837 - val_accuracy: 0.7163
+
+Epoch 00022: val_loss improved from 0.90571 to 0.88365, saving model to models\emotions_vgg8_3d\model.hdf5
+Epoch 23/100
+
+Epoch 00023: CosineAnnealingScheduler setting learning rate to 0.08864040551740157.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.8041 - accuracy: 0.7364 - val_loss: 0.8959 - val_accuracy: 0.7150
+
+Epoch 00023: val_loss did not improve from 0.88365
+Epoch 24/100
+
+Epoch 00024: CosineAnnealingScheduler setting learning rate to 0.08763049794670776.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7910 - accuracy: 0.7421 - val_loss: 0.9297 - val_accuracy: 0.6972
+
+Epoch 00024: val_loss did not improve from 0.88365
+Epoch 25/100
+
+Epoch 00025: CosineAnnealingScheduler setting learning rate to 0.08658394705735988.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7758 - accuracy: 0.7481 - val_loss: 0.8915 - val_accuracy: 0.7185
+
+Epoch 00025: val_loss did not improve from 0.88365
+Epoch 26/100
+
+Epoch 00026: CosineAnnealingScheduler setting learning rate to 0.0855017856687341.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7711 - accuracy: 0.7464 - val_loss: 0.9060 - val_accuracy: 0.7121
+
+Epoch 00026: val_loss did not improve from 0.88365
+Epoch 27/100
+
+Epoch 00027: CosineAnnealingScheduler setting learning rate to 0.08438508174347009.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7561 - accuracy: 0.7546 - val_loss: 0.9208 - val_accuracy: 0.7144
+
+Epoch 00027: val_loss did not improve from 0.88365
+Epoch 28/100
+
+Epoch 00028: CosineAnnealingScheduler setting learning rate to 0.08323493733352078.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7483 - accuracy: 0.7553 - val_loss: 0.9035 - val_accuracy: 0.7153
+
+Epoch 00028: val_loss did not improve from 0.88365
+Epoch 29/100
+
+Epoch 00029: CosineAnnealingScheduler setting learning rate to 0.08205248749256015.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7315 - accuracy: 0.7611 - val_loss: 0.9053 - val_accuracy: 0.7198
+
+Epoch 00029: val_loss did not improve from 0.88365
+Epoch 30/100
+
+Epoch 00030: CosineAnnealingScheduler setting learning rate to 0.08083889915582235.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7226 - accuracy: 0.7681 - val_loss: 0.9347 - val_accuracy: 0.7236
+
+Epoch 00030: val_loss did not improve from 0.88365
+Epoch 31/100
+
+Epoch 00031: CosineAnnealingScheduler setting learning rate to 0.07959536998847744.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7201 - accuracy: 0.7639 - val_loss: 0.9301 - val_accuracy: 0.7192
+
+Epoch 00031: val_loss did not improve from 0.88365
+Epoch 32/100
+
+Epoch 00032: CosineAnnealingScheduler setting learning rate to 0.07832312720368048.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.7097 - accuracy: 0.7685 - val_loss: 0.8863 - val_accuracy: 0.7227
+
+Epoch 00032: val_loss did not improve from 0.88365
+Epoch 33/100
+
+Epoch 00033: CosineAnnealingScheduler setting learning rate to 0.07702342635146034.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.6970 - accuracy: 0.7754 - val_loss: 0.8947 - val_accuracy: 0.7265
+
+Epoch 00033: val_loss did not improve from 0.88365
+Epoch 34/100
+
+Epoch 00034: CosineAnnealingScheduler setting learning rate to 0.07569755007964339.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.6872 - accuracy: 0.7788 - val_loss: 0.9258 - val_accuracy: 0.7192
+
+Epoch 00034: val_loss did not improve from 0.88365
+Epoch 35/100
+
+Epoch 00035: CosineAnnealingScheduler setting learning rate to 0.07434680686803491.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.6790 - accuracy: 0.7820 - val_loss: 0.8922 - val_accuracy: 0.7351
+
+Epoch 00035: val_loss did not improve from 0.88365
+Epoch 36/100
+
+Epoch 00036: CosineAnnealingScheduler setting learning rate to 0.07297252973710756.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.6678 - accuracy: 0.7865 - val_loss: 0.9199 - val_accuracy: 0.7179
+
+Epoch 00036: val_loss did not improve from 0.88365
+Epoch 37/100
+
+Epoch 00037: CosineAnnealingScheduler setting learning rate to 0.0715760749324711.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6634 - accuracy: 0.7881 - val_loss: 0.9373 - val_accuracy: 0.7134
+
+Epoch 00037: val_loss did not improve from 0.88365
+Epoch 38/100
+
+Epoch 00038: CosineAnnealingScheduler setting learning rate to 0.07015882058642164.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.6539 - accuracy: 0.7921 - val_loss: 1.0155 - val_accuracy: 0.7125
+
+Epoch 00038: val_loss did not improve from 0.88365
+Epoch 39/100
+
+Epoch 00039: CosineAnnealingScheduler setting learning rate to 0.06872216535789157.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6400 - accuracy: 0.7990 - val_loss: 0.9221 - val_accuracy: 0.7278
+
+Epoch 00039: val_loss did not improve from 0.88365
+Epoch 40/100
+
+Epoch 00040: CosineAnnealingScheduler setting learning rate to 0.06726752705214194.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6328 - accuracy: 0.7991 - val_loss: 0.9834 - val_accuracy: 0.6962
+
+Epoch 00040: val_loss did not improve from 0.88365
+Epoch 41/100
+
+Epoch 00041: CosineAnnealingScheduler setting learning rate to 0.0657963412215599.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6244 - accuracy: 0.8025 - val_loss: 0.9655 - val_accuracy: 0.7153
+
+Epoch 00041: val_loss did not improve from 0.88365
+Epoch 42/100
+
+Epoch 00042: CosineAnnealingScheduler setting learning rate to 0.06431005974894186.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6130 - accuracy: 0.8071 - val_loss: 0.9797 - val_accuracy: 0.7086
+
+Epoch 00042: val_loss did not improve from 0.88365
+Epoch 43/100
+
+Epoch 00043: CosineAnnealingScheduler setting learning rate to 0.0628101494146603.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6035 - accuracy: 0.8112 - val_loss: 0.9817 - val_accuracy: 0.7039
+
+Epoch 00043: val_loss did not improve from 0.88365
+Epoch 44/100
+
+Epoch 00044: CosineAnnealingScheduler setting learning rate to 0.061298090449128866.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.6083 - accuracy: 0.8087 - val_loss: 0.9227 - val_accuracy: 0.7268
+
+Epoch 00044: val_loss did not improve from 0.88365
+Epoch 45/100
+
+Epoch 00045: CosineAnnealingScheduler setting learning rate to 0.05977537507199338.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.5906 - accuracy: 0.8177 - val_loss: 0.9558 - val_accuracy: 0.7211
+
+Epoch 00045: val_loss did not improve from 0.88365
+Epoch 46/100
+
+Epoch 00046: CosineAnnealingScheduler setting learning rate to 0.05824350601949144.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.5824 - accuracy: 0.8205 - val_loss: 0.9619 - val_accuracy: 0.7217
+
+Epoch 00046: val_loss did not improve from 0.88365
+Epoch 47/100
+
+Epoch 00047: CosineAnnealingScheduler setting learning rate to 0.056703995061433074.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.5760 - accuracy: 0.8207 - val_loss: 0.9470 - val_accuracy: 0.7182
+
+Epoch 00047: val_loss did not improve from 0.88365
+Epoch 48/100
+
+Epoch 00048: CosineAnnealingScheduler setting learning rate to 0.055158361509266465.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.5646 - accuracy: 0.8266 - val_loss: 0.9423 - val_accuracy: 0.7329
+
+Epoch 00048: val_loss did not improve from 0.88365
+Epoch 49/100
+
+Epoch 00049: CosineAnnealingScheduler setting learning rate to 0.05360813071670102.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.5518 - accuracy: 0.8315 - val_loss: 0.9788 - val_accuracy: 0.7236
+
+Epoch 00049: val_loss did not improve from 0.88365
+Epoch 50/100
+
+Epoch 00050: CosineAnnealingScheduler setting learning rate to 0.052054832574367355.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.5511 - accuracy: 0.8305 - val_loss: 0.9981 - val_accuracy: 0.7262
+
+Epoch 00050: val_loss did not improve from 0.88365
+Epoch 51/100
+
+Epoch 00051: CosineAnnealingScheduler setting learning rate to 0.0505.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.5292 - accuracy: 0.8392 - val_loss: 1.0184 - val_accuracy: 0.7195
+
+Epoch 00051: val_loss did not improve from 0.88365
+Epoch 52/100
+
+Epoch 00052: CosineAnnealingScheduler setting learning rate to 0.04894516742563265.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.5246 - accuracy: 0.8402 - val_loss: 1.0751 - val_accuracy: 0.7243
+
+Epoch 00052: val_loss did not improve from 0.88365
+Epoch 53/100
+
+Epoch 00053: CosineAnnealingScheduler setting learning rate to 0.04739186928329899.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.5123 - accuracy: 0.8453 - val_loss: 1.0171 - val_accuracy: 0.7265
+
+Epoch 00053: val_loss did not improve from 0.88365
+Epoch 54/100
+
+Epoch 00054: CosineAnnealingScheduler setting learning rate to 0.04584163849073354.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.5002 - accuracy: 0.8510 - val_loss: 1.0857 - val_accuracy: 0.7287
+
+Epoch 00054: val_loss did not improve from 0.88365
+Epoch 55/100
+
+Epoch 00055: CosineAnnealingScheduler setting learning rate to 0.044296004938566946.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.4969 - accuracy: 0.8503 - val_loss: 1.0488 - val_accuracy: 0.7297
+
+Epoch 00055: val_loss did not improve from 0.88365
+Epoch 56/100
+
+Epoch 00056: CosineAnnealingScheduler setting learning rate to 0.04275649398050858.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.4929 - accuracy: 0.8523 - val_loss: 1.0210 - val_accuracy: 0.7310
+
+Epoch 00056: val_loss did not improve from 0.88365
+Epoch 57/100
+
+Epoch 00057: CosineAnnealingScheduler setting learning rate to 0.04122462492800664.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.4842 - accuracy: 0.8563 - val_loss: 1.0524 - val_accuracy: 0.7351
+
+Epoch 00057: val_loss did not improve from 0.88365
+Epoch 58/100
+
+Epoch 00058: CosineAnnealingScheduler setting learning rate to 0.03970190955087116.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.4743 - accuracy: 0.8574 - val_loss: 1.0316 - val_accuracy: 0.7383
+
+Epoch 00058: val_loss did not improve from 0.88365
+Epoch 59/100
+
+Epoch 00059: CosineAnnealingScheduler setting learning rate to 0.03818985058533969.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.4647 - accuracy: 0.8644 - val_loss: 1.0698 - val_accuracy: 0.7287
+
+Epoch 00059: val_loss did not improve from 0.88365
+Epoch 60/100
+
+Epoch 00060: CosineAnnealingScheduler setting learning rate to 0.03668994025105816.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.4635 - accuracy: 0.8629 - val_loss: 1.0924 - val_accuracy: 0.7313
+
+Epoch 00060: val_loss did not improve from 0.88365
+Epoch 61/100
+
+Epoch 00061: CosineAnnealingScheduler setting learning rate to 0.03520365877844012.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4537 - accuracy: 0.8670 - val_loss: 1.0721 - val_accuracy: 0.7265
+
+Epoch 00061: val_loss did not improve from 0.88365
+Epoch 62/100
+
+Epoch 00062: CosineAnnealingScheduler setting learning rate to 0.03373247294785808.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4428 - accuracy: 0.8722 - val_loss: 1.0458 - val_accuracy: 0.7316
+
+Epoch 00062: val_loss did not improve from 0.88365
+Epoch 63/100
+
+Epoch 00063: CosineAnnealingScheduler setting learning rate to 0.032277834642108455.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4316 - accuracy: 0.8745 - val_loss: 1.1485 - val_accuracy: 0.7290
+
+Epoch 00063: val_loss did not improve from 0.88365
+Epoch 64/100
+
+Epoch 00064: CosineAnnealingScheduler setting learning rate to 0.030841179413578355.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4264 - accuracy: 0.8765 - val_loss: 1.1910 - val_accuracy: 0.7294
+
+Epoch 00064: val_loss did not improve from 0.88365
+Epoch 65/100
+
+Epoch 00065: CosineAnnealingScheduler setting learning rate to 0.029423925067528906.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4168 - accuracy: 0.8796 - val_loss: 1.1563 - val_accuracy: 0.7300
+
+Epoch 00065: val_loss did not improve from 0.88365
+Epoch 66/100
+
+Epoch 00066: CosineAnnealingScheduler setting learning rate to 0.02802747026289244.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4011 - accuracy: 0.8844 - val_loss: 1.1275 - val_accuracy: 0.7341
+
+Epoch 00066: val_loss did not improve from 0.88365
+Epoch 67/100
+
+Epoch 00067: CosineAnnealingScheduler setting learning rate to 0.026653193131965087.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.4088 - accuracy: 0.8822 - val_loss: 1.0967 - val_accuracy: 0.7287
+
+Epoch 00067: val_loss did not improve from 0.88365
+Epoch 68/100
+
+Epoch 00068: CosineAnnealingScheduler setting learning rate to 0.025302449920356622.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3903 - accuracy: 0.8900 - val_loss: 1.1373 - val_accuracy: 0.7220
+
+Epoch 00068: val_loss did not improve from 0.88365
+Epoch 69/100
+
+Epoch 00069: CosineAnnealingScheduler setting learning rate to 0.023976573648539657.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3844 - accuracy: 0.8915 - val_loss: 1.1663 - val_accuracy: 0.7227
+
+Epoch 00069: val_loss did not improve from 0.88365
+Epoch 70/100
+
+Epoch 00070: CosineAnnealingScheduler setting learning rate to 0.022676872796319532.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3753 - accuracy: 0.8940 - val_loss: 1.1620 - val_accuracy: 0.7297
+
+Epoch 00070: val_loss did not improve from 0.88365
+Epoch 71/100
+
+Epoch 00071: CosineAnnealingScheduler setting learning rate to 0.021404630011522586.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3764 - accuracy: 0.8928 - val_loss: 1.2082 - val_accuracy: 0.7313
+
+Epoch 00071: val_loss did not improve from 0.88365
+Epoch 72/100
+
+Epoch 00072: CosineAnnealingScheduler setting learning rate to 0.02016110084417766.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3649 - accuracy: 0.8979 - val_loss: 1.1896 - val_accuracy: 0.7322
+
+Epoch 00072: val_loss did not improve from 0.88365
+Epoch 73/100
+
+Epoch 00073: CosineAnnealingScheduler setting learning rate to 0.01894751250743986.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3566 - accuracy: 0.9011 - val_loss: 1.1761 - val_accuracy: 0.7319
+
+Epoch 00073: val_loss did not improve from 0.88365
+Epoch 74/100
+
+Epoch 00074: CosineAnnealingScheduler setting learning rate to 0.01776506266647924.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.3491 - accuracy: 0.9027 - val_loss: 1.2034 - val_accuracy: 0.7319
+
+Epoch 00074: val_loss did not improve from 0.88365
+Epoch 75/100
+
+Epoch 00075: CosineAnnealingScheduler setting learning rate to 0.016614918256529908.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3460 - accuracy: 0.9050 - val_loss: 1.2062 - val_accuracy: 0.7313
+
+Epoch 00075: val_loss did not improve from 0.88365
+Epoch 76/100
+
+Epoch 00076: CosineAnnealingScheduler setting learning rate to 0.0154982143312659.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3415 - accuracy: 0.9069 - val_loss: 1.2539 - val_accuracy: 0.7249
+
+Epoch 00076: val_loss did not improve from 0.88365
+Epoch 77/100
+
+Epoch 00077: CosineAnnealingScheduler setting learning rate to 0.014416052942640138.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3381 - accuracy: 0.9079 - val_loss: 1.2595 - val_accuracy: 0.7303
+
+Epoch 00077: val_loss did not improve from 0.88365
+Epoch 78/100
+
+Epoch 00078: CosineAnnealingScheduler setting learning rate to 0.013369502053292258.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.3237 - accuracy: 0.9132 - val_loss: 1.3326 - val_accuracy: 0.7220
+
+Epoch 00078: val_loss did not improve from 0.88365
+Epoch 79/100
+
+Epoch 00079: CosineAnnealingScheduler setting learning rate to 0.012359594482598438.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.3208 - accuracy: 0.9152 - val_loss: 1.2962 - val_accuracy: 0.7243
+
+Epoch 00079: val_loss did not improve from 0.88365
+Epoch 80/100
+
+Epoch 00080: CosineAnnealingScheduler setting learning rate to 0.011387326887403324.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.3148 - accuracy: 0.9152 - val_loss: 1.2900 - val_accuracy: 0.7259
+
+Epoch 00080: val_loss did not improve from 0.88365
+Epoch 81/100
+
+Epoch 00081: CosineAnnealingScheduler setting learning rate to 0.010453658778440109.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3124 - accuracy: 0.9158 - val_loss: 1.3002 - val_accuracy: 0.7236
+
+Epoch 00081: val_loss did not improve from 0.88365
+Epoch 82/100
+
+Epoch 00082: CosineAnnealingScheduler setting learning rate to 0.009559511573409202.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3111 - accuracy: 0.9175 - val_loss: 1.3011 - val_accuracy: 0.7268
+
+Epoch 00082: val_loss did not improve from 0.88365
+Epoch 83/100
+
+Epoch 00083: CosineAnnealingScheduler setting learning rate to 0.008705767687650266.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3052 - accuracy: 0.9202 - val_loss: 1.3123 - val_accuracy: 0.7281
+
+Epoch 00083: val_loss did not improve from 0.88365
+Epoch 84/100
+
+Epoch 00084: CosineAnnealingScheduler setting learning rate to 0.007893269663304784.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.2986 - accuracy: 0.9220 - val_loss: 1.3257 - val_accuracy: 0.7325
+
+Epoch 00084: val_loss did not improve from 0.88365
+Epoch 85/100
+
+Epoch 00085: CosineAnnealingScheduler setting learning rate to 0.007122819337828753.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.2976 - accuracy: 0.9214 - val_loss: 1.3571 - val_accuracy: 0.7239
+
+Epoch 00085: val_loss did not improve from 0.88365
+Epoch 86/100
+
+Epoch 00086: CosineAnnealingScheduler setting learning rate to 0.0063951770526757944.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2936 - accuracy: 0.9243 - val_loss: 1.3085 - val_accuracy: 0.7262
+
+Epoch 00086: val_loss did not improve from 0.88365
+Epoch 87/100
+
+Epoch 00087: CosineAnnealingScheduler setting learning rate to 0.005711060902932042.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2906 - accuracy: 0.9257 - val_loss: 1.3336 - val_accuracy: 0.7230
+
+Epoch 00087: val_loss did not improve from 0.88365
+Epoch 88/100
+
+Epoch 00088: CosineAnnealingScheduler setting learning rate to 0.005071146028642945.
+25045/25045 [==============================] - 54s 2ms/step - loss: 0.2920 - accuracy: 0.9245 - val_loss: 1.3478 - val_accuracy: 0.7271
+
+Epoch 00088: val_loss did not improve from 0.88365
+Epoch 89/100
+
+Epoch 00089: CosineAnnealingScheduler setting learning rate to 0.004476063948531559.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2800 - accuracy: 0.9285 - val_loss: 1.3557 - val_accuracy: 0.7303
+
+Epoch 00089: val_loss did not improve from 0.88365
+Epoch 90/100
+
+Epoch 00090: CosineAnnealingScheduler setting learning rate to 0.00392640193676584.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2902 - accuracy: 0.9246 - val_loss: 1.3424 - val_accuracy: 0.7268
+
+Epoch 00090: val_loss did not improve from 0.88365
+Epoch 91/100
+
+Epoch 00091: CosineAnnealingScheduler setting learning rate to 0.0034227024433899004.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2738 - accuracy: 0.9314 - val_loss: 1.3641 - val_accuracy: 0.7271
+
+Epoch 00091: val_loss did not improve from 0.88365
+Epoch 92/100
+
+Epoch 00092: CosineAnnealingScheduler setting learning rate to 0.002965462558991324.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2794 - accuracy: 0.9288 - val_loss: 1.3650 - val_accuracy: 0.7297
+
+Epoch 00092: val_loss did not improve from 0.88365
+Epoch 93/100
+
+Epoch 00093: CosineAnnealingScheduler setting learning rate to 0.0025551335241327674.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2781 - accuracy: 0.9303 - val_loss: 1.3340 - val_accuracy: 0.7262
+
+Epoch 00093: val_loss did not improve from 0.88365
+Epoch 94/100
+
+Epoch 00094: CosineAnnealingScheduler setting learning rate to 0.0021921202840320076.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2760 - accuracy: 0.9294 - val_loss: 1.3572 - val_accuracy: 0.7255
+
+Epoch 00094: val_loss did not improve from 0.88365
+Epoch 95/100
+
+Epoch 00095: CosineAnnealingScheduler setting learning rate to 0.0018767810889299083.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2762 - accuracy: 0.9308 - val_loss: 1.3536 - val_accuracy: 0.7249
+
+Epoch 00095: val_loss did not improve from 0.88365
+Epoch 96/100
+
+Epoch 00096: CosineAnnealingScheduler setting learning rate to 0.001609427140540686.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2751 - accuracy: 0.9315 - val_loss: 1.3605 - val_accuracy: 0.7243
+
+Epoch 00096: val_loss did not improve from 0.88365
+Epoch 97/100
+
+Epoch 00097: CosineAnnealingScheduler setting learning rate to 0.0013903222849333506.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2699 - accuracy: 0.9313 - val_loss: 1.3586 - val_accuracy: 0.7255
+
+Epoch 00097: val_loss did not improve from 0.88365
+Epoch 98/100
+
+Epoch 00098: CosineAnnealingScheduler setting learning rate to 0.0012196827521475401.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2731 - accuracy: 0.9296 - val_loss: 1.3440 - val_accuracy: 0.7290
+
+Epoch 00098: val_loss did not improve from 0.88365
+Epoch 99/100
+
+Epoch 00099: CosineAnnealingScheduler setting learning rate to 0.0010976769428005578.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2684 - accuracy: 0.9326 - val_loss: 1.3562 - val_accuracy: 0.7300
+
+Epoch 00099: val_loss did not improve from 0.88365
+Epoch 100/100
+
+Epoch 00100: CosineAnnealingScheduler setting learning rate to 0.0010244252618962857.
+25045/25045 [==============================] - 53s 
+
+Test loss: 0.8836510074264045
+Test accuracy: 0.7162894606590271

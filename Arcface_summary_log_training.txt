@@ -1,0 +1,658 @@
+Model: "model_2"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_3 (InputLayer)            (None, 48, 48, 1)    0                                            
+__________________________________________________________________________________________________
+conv2d_7 (Conv2D)               (None, 48, 48, 16)   160         input_3[0][0]                    
+__________________________________________________________________________________________________
+activation_7 (Activation)       (None, 48, 48, 16)   0           conv2d_7[0][0]                   
+__________________________________________________________________________________________________
+conv2d_8 (Conv2D)               (None, 48, 48, 16)   2320        activation_7[0][0]               
+__________________________________________________________________________________________________
+activation_8 (Activation)       (None, 48, 48, 16)   0           conv2d_8[0][0]                   
+__________________________________________________________________________________________________
+max_pooling2d_4 (MaxPooling2D)  (None, 24, 24, 16)   0           activation_8[0][0]               
+__________________________________________________________________________________________________
+conv2d_9 (Conv2D)               (None, 24, 24, 32)   4640        max_pooling2d_4[0][0]            
+__________________________________________________________________________________________________
+activation_9 (Activation)       (None, 24, 24, 32)   0           conv2d_9[0][0]                   
+__________________________________________________________________________________________________
+conv2d_10 (Conv2D)              (None, 24, 24, 32)   9248        activation_9[0][0]               
+__________________________________________________________________________________________________
+activation_10 (Activation)      (None, 24, 24, 32)   0           conv2d_10[0][0]                  
+__________________________________________________________________________________________________
+max_pooling2d_5 (MaxPooling2D)  (None, 12, 12, 32)   0           activation_10[0][0]              
+__________________________________________________________________________________________________
+conv2d_11 (Conv2D)              (None, 12, 12, 64)   18496       max_pooling2d_5[0][0]            
+__________________________________________________________________________________________________
+activation_11 (Activation)      (None, 12, 12, 64)   0           conv2d_11[0][0]                  
+__________________________________________________________________________________________________
+conv2d_12 (Conv2D)              (None, 12, 12, 64)   36928       activation_11[0][0]              
+__________________________________________________________________________________________________
+activation_12 (Activation)      (None, 12, 12, 64)   0           conv2d_12[0][0]                  
+__________________________________________________________________________________________________
+max_pooling2d_6 (MaxPooling2D)  (None, 6, 6, 64)     0           activation_12[0][0]              
+__________________________________________________________________________________________________
+dropout_2 (Dropout)             (None, 6, 6, 64)     0           max_pooling2d_6[0][0]            
+__________________________________________________________________________________________________
+flatten_2 (Flatten)             (None, 2304)         0           dropout_2[0][0]                  
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (None, 3)            6915        flatten_2[0][0]                  
+__________________________________________________________________________________________________
+input_4 (InputLayer)            (None, 8)            0                                            
+__________________________________________________________________________________________________
+arc_face_2 (ArcFace)            (None, 8)            24          dense_2[0][0]                    
+                                                                 input_4[0][0]                    
+==================================================================================================
+Total params: 78,731
+Trainable params: 78,731
+Non-trainable params: 0
+__________________________________________________________________________________________________
+Train on 25045 samples, validate on 3137 samples
+Epoch 1/100
+
+Epoch 00001: CosineAnnealingScheduler setting learning rate to 0.1.
+25045/25045 [==============================] - 37s 1ms/step - loss: 1.9913 - accuracy: 0.8845 - val_loss: 0.4330 - val_accuracy: 1.0000
+
+Epoch 00001: val_loss improved from inf to 0.43304, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 2/100
+
+Epoch 00002: CosineAnnealingScheduler setting learning rate to 0.09997557473810371.
+25045/25045 [==============================] - 37s 1ms/step - loss: 0.4585 - accuracy: 1.0000 - val_loss: 0.4262 - val_accuracy: 1.0000
+
+Epoch 00002: val_loss improved from 0.43304 to 0.42615, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 3/100
+
+Epoch 00003: CosineAnnealingScheduler setting learning rate to 0.09990232305719944.
+25045/25045 [==============================] - 38s 2ms/step - loss: 0.4497 - accuracy: 1.0000 - val_loss: 0.4209 - val_accuracy: 1.0000
+
+Epoch 00003: val_loss improved from 0.42615 to 0.42091, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 4/100
+
+Epoch 00004: CosineAnnealingScheduler setting learning rate to 0.09978031724785247.
+25045/25045 [==============================] - 40s 2ms/step - loss: 0.4421 - accuracy: 1.0000 - val_loss: 0.4151 - val_accuracy: 1.0000
+
+Epoch 00004: val_loss improved from 0.42091 to 0.41507, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 5/100
+
+Epoch 00005: CosineAnnealingScheduler setting learning rate to 0.09960967771506667.
+25045/25045 [==============================] - 40s 2ms/step - loss: 0.4357 - accuracy: 1.0000 - val_loss: 0.4116 - val_accuracy: 1.0000
+
+Epoch 00005: val_loss improved from 0.41507 to 0.41162, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 6/100
+
+Epoch 00006: CosineAnnealingScheduler setting learning rate to 0.09939057285945932.
+25045/25045 [==============================] - 42s 2ms/step - loss: 0.4293 - accuracy: 1.0000 - val_loss: 0.4089 - val_accuracy: 1.0000
+
+Epoch 00006: val_loss improved from 0.41162 to 0.40889, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 7/100
+
+Epoch 00007: CosineAnnealingScheduler setting learning rate to 0.09912321891107011.
+25045/25045 [==============================] - 42s 2ms/step - loss: 0.4237 - accuracy: 1.0000 - val_loss: 0.4033 - val_accuracy: 1.0000
+
+Epoch 00007: val_loss improved from 0.40889 to 0.40332, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 8/100
+
+Epoch 00008: CosineAnnealingScheduler setting learning rate to 0.09880787971596801.
+25045/25045 [==============================] - 42s 2ms/step - loss: 0.4181 - accuracy: 1.0000 - val_loss: 0.4016 - val_accuracy: 1.0000
+
+Epoch 00008: val_loss improved from 0.40332 to 0.40159, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 9/100
+
+Epoch 00009: CosineAnnealingScheduler setting learning rate to 0.09844486647586724.
+25045/25045 [==============================] - 43s 2ms/step - loss: 0.4130 - accuracy: 1.0000 - val_loss: 0.3953 - val_accuracy: 1.0000
+
+Epoch 00009: val_loss improved from 0.40159 to 0.39529, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 10/100
+
+Epoch 00010: CosineAnnealingScheduler setting learning rate to 0.09803453744100869.
+25045/25045 [==============================] - 43s 2ms/step - loss: 0.4080 - accuracy: 1.0000 - val_loss: 0.3920 - val_accuracy: 1.0000
+
+Epoch 00010: val_loss improved from 0.39529 to 0.39201, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 11/100
+
+Epoch 00011: CosineAnnealingScheduler setting learning rate to 0.09757729755661011.
+25045/25045 [==============================] - 44s 2ms/step - loss: 0.4033 - accuracy: 1.0000 - val_loss: 0.3876 - val_accuracy: 1.0000
+
+Epoch 00011: val_loss improved from 0.39201 to 0.38764, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 12/100
+
+Epoch 00012: CosineAnnealingScheduler setting learning rate to 0.09707359806323416.
+25045/25045 [==============================] - 44s 2ms/step - loss: 0.3987 - accuracy: 1.0000 - val_loss: 0.3858 - val_accuracy: 1.0000
+
+Epoch 00012: val_loss improved from 0.38764 to 0.38579, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 13/100
+
+Epoch 00013: CosineAnnealingScheduler setting learning rate to 0.09652393605146845.
+25045/25045 [==============================] - 45s 2ms/step - loss: 0.3943 - accuracy: 1.0000 - val_loss: 0.3822 - val_accuracy: 1.0000
+
+Epoch 00013: val_loss improved from 0.38579 to 0.38216, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 14/100
+
+Epoch 00014: CosineAnnealingScheduler setting learning rate to 0.09592885397135707.
+25045/25045 [==============================] - 46s 2ms/step - loss: 0.3900 - accuracy: 1.0000 - val_loss: 0.3782 - val_accuracy: 1.0000
+
+Epoch 00014: val_loss improved from 0.38216 to 0.37815, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 15/100
+
+Epoch 00015: CosineAnnealingScheduler setting learning rate to 0.09528893909706797.
+25045/25045 [==============================] - 46s 2ms/step - loss: 0.3858 - accuracy: 1.0000 - val_loss: 0.3743 - val_accuracy: 1.0000
+
+Epoch 00015: val_loss improved from 0.37815 to 0.37429, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 16/100
+
+Epoch 00016: CosineAnnealingScheduler setting learning rate to 0.09460482294732421.
+25045/25045 [==============================] - 46s 2ms/step - loss: 0.3819 - accuracy: 1.0000 - val_loss: 0.3725 - val_accuracy: 1.0000
+
+Epoch 00016: val_loss improved from 0.37429 to 0.37246, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 17/100
+
+Epoch 00017: CosineAnnealingScheduler setting learning rate to 0.09387718066217125.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3781 - accuracy: 1.0000 - val_loss: 0.3682 - val_accuracy: 1.0000
+
+Epoch 00017: val_loss improved from 0.37246 to 0.36821, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 18/100
+
+Epoch 00018: CosineAnnealingScheduler setting learning rate to 0.09310673033669521.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3743 - accuracy: 1.0000 - val_loss: 0.3656 - val_accuracy: 1.0000
+
+Epoch 00018: val_loss improved from 0.36821 to 0.36565, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 19/100
+
+Epoch 00019: CosineAnnealingScheduler setting learning rate to 0.09229423231234975.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3707 - accuracy: 1.0000 - val_loss: 0.3628 - val_accuracy: 1.0000
+
+Epoch 00019: val_loss improved from 0.36565 to 0.36280, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 20/100
+
+Epoch 00020: CosineAnnealingScheduler setting learning rate to 0.0914404884265908.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3672 - accuracy: 1.0000 - val_loss: 0.3605 - val_accuracy: 1.0000
+
+Epoch 00020: val_loss improved from 0.36280 to 0.36053, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 21/100
+
+Epoch 00021: CosineAnnealingScheduler setting learning rate to 0.0905463412215599.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3639 - accuracy: 1.0000 - val_loss: 0.3578 - val_accuracy: 1.0000
+
+Epoch 00021: val_loss improved from 0.36053 to 0.35780, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 22/100
+
+Epoch 00022: CosineAnnealingScheduler setting learning rate to 0.08961267311259669.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3607 - accuracy: 1.0000 - val_loss: 0.3540 - val_accuracy: 1.0000
+
+Epoch 00022: val_loss improved from 0.35780 to 0.35401, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 23/100
+
+Epoch 00023: CosineAnnealingScheduler setting learning rate to 0.08864040551740157.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.3574 - accuracy: 1.0000 - val_loss: 0.3514 - val_accuracy: 1.0000
+
+Epoch 00023: val_loss improved from 0.35401 to 0.35139, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 24/100
+
+Epoch 00024: CosineAnnealingScheduler setting learning rate to 0.08763049794670776.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3544 - accuracy: 1.0000 - val_loss: 0.3492 - val_accuracy: 1.0000
+
+Epoch 00024: val_loss improved from 0.35139 to 0.34916, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 25/100
+
+Epoch 00025: CosineAnnealingScheduler setting learning rate to 0.08658394705735988.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3516 - accuracy: 1.0000 - val_loss: 0.3479 - val_accuracy: 1.0000
+
+Epoch 00025: val_loss improved from 0.34916 to 0.34789, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 26/100
+
+Epoch 00026: CosineAnnealingScheduler setting learning rate to 0.0855017856687341.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3487 - accuracy: 1.0000 - val_loss: 0.3463 - val_accuracy: 1.0000
+
+Epoch 00026: val_loss improved from 0.34789 to 0.34629, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 27/100
+
+Epoch 00027: CosineAnnealingScheduler setting learning rate to 0.08438508174347009.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3460 - accuracy: 1.0000 - val_loss: 0.3417 - val_accuracy: 1.0000
+
+Epoch 00027: val_loss improved from 0.34629 to 0.34167, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 28/100
+
+Epoch 00028: CosineAnnealingScheduler setting learning rate to 0.08323493733352078.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3436 - accuracy: 1.0000 - val_loss: 0.3402 - val_accuracy: 1.0000
+
+Epoch 00028: val_loss improved from 0.34167 to 0.34020, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 29/100
+
+Epoch 00029: CosineAnnealingScheduler setting learning rate to 0.08205248749256015.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3411 - accuracy: 1.0000 - val_loss: 0.3396 - val_accuracy: 1.0000
+
+Epoch 00029: val_loss improved from 0.34020 to 0.33958, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 30/100
+
+Epoch 00030: CosineAnnealingScheduler setting learning rate to 0.08083889915582235.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3388 - accuracy: 1.0000 - val_loss: 0.3353 - val_accuracy: 1.0000
+
+Epoch 00030: val_loss improved from 0.33958 to 0.33534, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 31/100
+
+Epoch 00031: CosineAnnealingScheduler setting learning rate to 0.07959536998847744.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3367 - accuracy: 1.0000 - val_loss: 0.3344 - val_accuracy: 1.0000
+
+Epoch 00031: val_loss improved from 0.33534 to 0.33436, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 32/100
+
+Epoch 00032: CosineAnnealingScheduler setting learning rate to 0.07832312720368048.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3345 - accuracy: 1.0000 - val_loss: 0.3342 - val_accuracy: 1.0000
+
+Epoch 00032: val_loss improved from 0.33436 to 0.33415, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 33/100
+
+Epoch 00033: CosineAnnealingScheduler setting learning rate to 0.07702342635146034.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3325 - accuracy: 1.0000 - val_loss: 0.3309 - val_accuracy: 1.0000
+
+Epoch 00033: val_loss improved from 0.33415 to 0.33093, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 34/100
+
+Epoch 00034: CosineAnnealingScheduler setting learning rate to 0.07569755007964339.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3306 - accuracy: 1.0000 - val_loss: 0.3295 - val_accuracy: 1.0000
+
+Epoch 00034: val_loss improved from 0.33093 to 0.32945, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 35/100
+
+Epoch 00035: CosineAnnealingScheduler setting learning rate to 0.07434680686803491.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3285 - accuracy: 1.0000 - val_loss: 0.3274 - val_accuracy: 1.0000
+
+Epoch 00035: val_loss improved from 0.32945 to 0.32740, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 36/100
+
+Epoch 00036: CosineAnnealingScheduler setting learning rate to 0.07297252973710756.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3267 - accuracy: 1.0000 - val_loss: 0.3240 - val_accuracy: 1.0000
+
+Epoch 00036: val_loss improved from 0.32740 to 0.32399, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 37/100
+
+Epoch 00037: CosineAnnealingScheduler setting learning rate to 0.0715760749324711.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3250 - accuracy: 1.0000 - val_loss: 0.3259 - val_accuracy: 1.0000
+
+Epoch 00037: val_loss did not improve from 0.32399
+Epoch 38/100
+
+Epoch 00038: CosineAnnealingScheduler setting learning rate to 0.07015882058642164.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.3231 - accuracy: 1.0000 - val_loss: 0.3235 - val_accuracy: 1.0000
+
+Epoch 00038: val_loss improved from 0.32399 to 0.32350, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 39/100
+
+Epoch 00039: CosineAnnealingScheduler setting learning rate to 0.06872216535789157.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.3214 - accuracy: 1.0000 - val_loss: 0.3202 - val_accuracy: 1.0000
+
+Epoch 00039: val_loss improved from 0.32350 to 0.32023, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 40/100
+
+Epoch 00040: CosineAnnealingScheduler setting learning rate to 0.06726752705214194.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3198 - accuracy: 1.0000 - val_loss: 0.3189 - val_accuracy: 1.0000
+
+Epoch 00040: val_loss improved from 0.32023 to 0.31893, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 41/100
+
+Epoch 00041: CosineAnnealingScheduler setting learning rate to 0.0657963412215599.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3180 - accuracy: 1.0000 - val_loss: 0.3166 - val_accuracy: 1.0000
+
+Epoch 00041: val_loss improved from 0.31893 to 0.31656, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 42/100
+
+Epoch 00042: CosineAnnealingScheduler setting learning rate to 0.06431005974894186.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3166 - accuracy: 1.0000 - val_loss: 0.3143 - val_accuracy: 1.0000
+
+Epoch 00042: val_loss improved from 0.31656 to 0.31435, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 43/100
+
+Epoch 00043: CosineAnnealingScheduler setting learning rate to 0.0628101494146603.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3151 - accuracy: 1.0000 - val_loss: 0.3125 - val_accuracy: 1.0000
+
+Epoch 00043: val_loss improved from 0.31435 to 0.31251, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 44/100
+
+Epoch 00044: CosineAnnealingScheduler setting learning rate to 0.061298090449128866.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3137 - accuracy: 1.0000 - val_loss: 0.3123 - val_accuracy: 1.0000
+
+Epoch 00044: val_loss improved from 0.31251 to 0.31230, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 45/100
+
+Epoch 00045: CosineAnnealingScheduler setting learning rate to 0.05977537507199338.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3121 - accuracy: 1.0000 - val_loss: 0.3111 - val_accuracy: 1.0000
+
+Epoch 00045: val_loss improved from 0.31230 to 0.31105, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 46/100
+
+Epoch 00046: CosineAnnealingScheduler setting learning rate to 0.05824350601949144.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3108 - accuracy: 1.0000 - val_loss: 0.3086 - val_accuracy: 1.0000
+
+Epoch 00046: val_loss improved from 0.31105 to 0.30857, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 47/100
+
+Epoch 00047: CosineAnnealingScheduler setting learning rate to 0.056703995061433074.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3094 - accuracy: 1.0000 - val_loss: 0.3093 - val_accuracy: 1.0000
+
+Epoch 00047: val_loss did not improve from 0.30857
+Epoch 48/100
+
+Epoch 00048: CosineAnnealingScheduler setting learning rate to 0.055158361509266465.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3082 - accuracy: 1.0000 - val_loss: 0.3074 - val_accuracy: 1.0000
+
+Epoch 00048: val_loss improved from 0.30857 to 0.30740, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 49/100
+
+Epoch 00049: CosineAnnealingScheduler setting learning rate to 0.05360813071670102.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3069 - accuracy: 1.0000 - val_loss: 0.3050 - val_accuracy: 1.0000
+
+Epoch 00049: val_loss improved from 0.30740 to 0.30503, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 50/100
+
+Epoch 00050: CosineAnnealingScheduler setting learning rate to 0.052054832574367355.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3055 - accuracy: 1.0000 - val_loss: 0.3042 - val_accuracy: 1.0000
+
+Epoch 00050: val_loss improved from 0.30503 to 0.30419, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 51/100
+
+Epoch 00050: val_loss improved from 0.30503 to 0.30419, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 51/100
+
+Epoch 00051: CosineAnnealingScheduler setting learning rate to 0.0505.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3044 - accuracy: 1.0000 - val_loss: 0.3053 - val_accuracy: 1.0000
+
+Epoch 00051: val_loss did not improve from 0.30419
+Epoch 52/100
+
+Epoch 00052: CosineAnnealingScheduler setting learning rate to 0.04894516742563265.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3034 - accuracy: 1.0000 - val_loss: 0.3024 - val_accuracy: 1.0000
+
+Epoch 00052: val_loss improved from 0.30419 to 0.30238, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 53/100
+
+Epoch 00053: CosineAnnealingScheduler setting learning rate to 0.04739186928329899.
+25045/25045 [==============================] - 52s 2ms/step - loss: 0.3021 - accuracy: 1.0000 - val_loss: 0.3001 - val_accuracy: 1.0000
+
+Epoch 00053: val_loss improved from 0.30238 to 0.30015, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 54/100
+
+Epoch 00054: CosineAnnealingScheduler setting learning rate to 0.04584163849073354.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.3009 - accuracy: 1.0000 - val_loss: 0.3002 - val_accuracy: 1.0000
+
+Epoch 00054: val_loss did not improve from 0.30015
+Epoch 55/100
+
+Epoch 00055: CosineAnnealingScheduler setting learning rate to 0.044296004938566946.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2999 - accuracy: 1.0000 - val_loss: 0.3007 - val_accuracy: 1.0000
+
+Epoch 00055: val_loss did not improve from 0.30015
+Epoch 56/100
+
+Epoch 00056: CosineAnnealingScheduler setting learning rate to 0.04275649398050858.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2990 - accuracy: 1.0000 - val_loss: 0.2984 - val_accuracy: 1.0000
+
+Epoch 00056: val_loss improved from 0.30015 to 0.29841, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 57/100
+
+Epoch 00057: CosineAnnealingScheduler setting learning rate to 0.04122462492800664.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2980 - accuracy: 1.0000 - val_loss: 0.2987 - val_accuracy: 1.0000
+
+Epoch 00057: val_loss did not improve from 0.29841
+Epoch 58/100
+
+Epoch 00058: CosineAnnealingScheduler setting learning rate to 0.03970190955087116.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2971 - accuracy: 1.0000 - val_loss: 0.2964 - val_accuracy: 1.0000
+
+Epoch 00058: val_loss improved from 0.29841 to 0.29639, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 59/100
+
+Epoch 00059: CosineAnnealingScheduler setting learning rate to 0.03818985058533969.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2961 - accuracy: 1.0000 - val_loss: 0.2966 - val_accuracy: 1.0000
+
+Epoch 00059: val_loss did not improve from 0.29639
+Epoch 60/100
+
+Epoch 00060: CosineAnnealingScheduler setting learning rate to 0.03668994025105816.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2952 - accuracy: 1.0000 - val_loss: 0.2938 - val_accuracy: 1.0000
+
+Epoch 00060: val_loss improved from 0.29639 to 0.29379, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 61/100
+
+Epoch 00061: CosineAnnealingScheduler setting learning rate to 0.03520365877844012.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2943 - accuracy: 1.0000 - val_loss: 0.2940 - val_accuracy: 1.0000
+
+Epoch 00061: val_loss did not improve from 0.29379
+Epoch 62/100
+
+Epoch 00062: CosineAnnealingScheduler setting learning rate to 0.03373247294785808.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2935 - accuracy: 1.0000 - val_loss: 0.2932 - val_accuracy: 1.0000
+
+Epoch 00062: val_loss improved from 0.29379 to 0.29319, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 63/100
+
+Epoch 00063: CosineAnnealingScheduler setting learning rate to 0.032277834642108455.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2928 - accuracy: 1.0000 - val_loss: 0.2922 - val_accuracy: 1.0000
+
+Epoch 00063: val_loss improved from 0.29319 to 0.29216, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 64/100
+
+Epoch 00064: CosineAnnealingScheduler setting learning rate to 0.030841179413578355.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2920 - accuracy: 1.0000 - val_loss: 0.2911 - val_accuracy: 1.0000
+
+Epoch 00064: val_loss improved from 0.29216 to 0.29112, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 65/100
+
+Epoch 00065: CosineAnnealingScheduler setting learning rate to 0.029423925067528906.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2913 - accuracy: 1.0000 - val_loss: 0.2905 - val_accuracy: 1.0000
+
+Epoch 00065: val_loss improved from 0.29112 to 0.29048, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 66/100
+
+Epoch 00066: CosineAnnealingScheduler setting learning rate to 0.02802747026289244.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2907 - accuracy: 1.0000 - val_loss: 0.2899 - val_accuracy: 1.0000
+
+Epoch 00066: val_loss improved from 0.29048 to 0.28994, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 67/100
+
+Epoch 00067: CosineAnnealingScheduler setting learning rate to 0.026653193131965087.
+25045/25045 [==============================] - 53s 2ms/step - loss: 0.2900 - accuracy: 1.0000 - val_loss: 0.2895 - val_accuracy: 1.0000
+
+Epoch 00067: val_loss improved from 0.28994 to 0.28953, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 68/100
+
+Epoch 00068: CosineAnnealingScheduler setting learning rate to 0.025302449920356622.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.2893 - accuracy: 1.0000 - val_loss: 0.2889 - val_accuracy: 1.0000
+
+Epoch 00068: val_loss improved from 0.28953 to 0.28887, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 69/100
+
+Epoch 00069: CosineAnnealingScheduler setting learning rate to 0.023976573648539657.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.2887 - accuracy: 1.0000 - val_loss: 0.2882 - val_accuracy: 1.0000
+
+Epoch 00069: val_loss improved from 0.28887 to 0.28818, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 70/100
+
+Epoch 00070: CosineAnnealingScheduler setting learning rate to 0.022676872796319532.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.2882 - accuracy: 1.0000 - val_loss: 0.2880 - val_accuracy: 1.0000
+
+Epoch 00070: val_loss improved from 0.28818 to 0.28802, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 71/100
+
+Epoch 00071: CosineAnnealingScheduler setting learning rate to 0.021404630011522586.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.2876 - accuracy: 1.0000 - val_loss: 0.2874 - val_accuracy: 1.0000
+
+Epoch 00071: val_loss improved from 0.28802 to 0.28742, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 72/100
+
+Epoch 00072: CosineAnnealingScheduler setting learning rate to 0.02016110084417766.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.2872 - accuracy: 1.0000 - val_loss: 0.2869 - val_accuracy: 1.0000
+
+Epoch 00072: val_loss improved from 0.28742 to 0.28688, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 73/100
+
+Epoch 00073: CosineAnnealingScheduler setting learning rate to 0.01894751250743986.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.2867 - accuracy: 1.0000 - val_loss: 0.2865 - val_accuracy: 1.0000
+
+Epoch 00073: val_loss improved from 0.28688 to 0.28651, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 74/100
+
+Epoch 00074: CosineAnnealingScheduler setting learning rate to 0.01776506266647924.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.2864 - accuracy: 1.0000 - val_loss: 0.2862 - val_accuracy: 1.0000
+
+Epoch 00074: val_loss improved from 0.28651 to 0.28622, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 75/100
+
+Epoch 00075: CosineAnnealingScheduler setting learning rate to 0.016614918256529908.
+25045/25045 [==============================] - 51s 2ms/step - loss: 0.2861 - accuracy: 1.0000 - val_loss: 0.2858 - val_accuracy: 1.0000
+
+Epoch 00075: val_loss improved from 0.28622 to 0.28584, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 76/100
+
+Epoch 00076: CosineAnnealingScheduler setting learning rate to 0.0154982143312659.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.2857 - accuracy: 1.0000 - val_loss: 0.2855 - val_accuracy: 1.0000
+
+Epoch 00076: val_loss improved from 0.28584 to 0.28554, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 77/100
+
+Epoch 00077: CosineAnnealingScheduler setting learning rate to 0.014416052942640138.
+25045/25045 [==============================] - 50s 2ms/step - loss: 0.2854 - accuracy: 1.0000 - val_loss: 0.2853 - val_accuracy: 1.0000
+
+Epoch 00077: val_loss improved from 0.28554 to 0.28527, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 78/100
+
+Epoch 00078: CosineAnnealingScheduler setting learning rate to 0.013369502053292258.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2852 - accuracy: 1.0000 - val_loss: 0.2850 - val_accuracy: 1.0000
+
+Epoch 00078: val_loss improved from 0.28527 to 0.28502, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 79/100
+
+Epoch 00079: CosineAnnealingScheduler setting learning rate to 0.012359594482598438.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2849 - accuracy: 1.0000 - val_loss: 0.2848 - val_accuracy: 1.0000
+
+Epoch 00079: val_loss improved from 0.28502 to 0.28478, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 80/100
+
+Epoch 00080: CosineAnnealingScheduler setting learning rate to 0.011387326887403324.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2847 - accuracy: 1.0000 - val_loss: 0.2846 - val_accuracy: 1.0000
+
+Epoch 00080: val_loss improved from 0.28478 to 0.28457, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 81/100
+
+Epoch 00081: CosineAnnealingScheduler setting learning rate to 0.010453658778440109.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2845 - accuracy: 1.0000 - val_loss: 0.2844 - val_accuracy: 1.0000
+
+Epoch 00081: val_loss improved from 0.28457 to 0.28437, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 82/100
+
+Epoch 00082: CosineAnnealingScheduler setting learning rate to 0.009559511573409202.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2843 - accuracy: 1.0000 - val_loss: 0.2842 - val_accuracy: 1.0000
+
+Epoch 00082: val_loss improved from 0.28437 to 0.28419, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 83/100
+
+Epoch 00083: CosineAnnealingScheduler setting learning rate to 0.008705767687650266.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.2841 - accuracy: 1.0000 - val_loss: 0.2840 - val_accuracy: 1.0000
+
+Epoch 00083: val_loss improved from 0.28419 to 0.28403, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 84/100
+
+Epoch 00084: CosineAnnealingScheduler setting learning rate to 0.007893269663304784.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2840 - accuracy: 1.0000 - val_loss: 0.2839 - val_accuracy: 1.0000
+
+Epoch 00084: val_loss improved from 0.28403 to 0.28389, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 85/100
+
+Epoch 00085: CosineAnnealingScheduler setting learning rate to 0.007122819337828753.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2838 - accuracy: 1.0000 - val_loss: 0.2837 - val_accuracy: 1.0000
+
+Epoch 00085: val_loss improved from 0.28389 to 0.28375, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 86/100
+
+Epoch 00086: CosineAnnealingScheduler setting learning rate to 0.0063951770526757944.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2837 - accuracy: 1.0000 - val_loss: 0.2836 - val_accuracy: 1.0000
+
+Epoch 00086: val_loss improved from 0.28375 to 0.28363, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 87/100
+
+Epoch 00087: CosineAnnealingScheduler setting learning rate to 0.005711060902932042.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2836 - accuracy: 1.0000 - val_loss: 0.2835 - val_accuracy: 1.0000
+
+Epoch 00087: val_loss improved from 0.28363 to 0.28352, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 88/100
+
+Epoch 00088: CosineAnnealingScheduler setting learning rate to 0.005071146028642945.
+25045/25045 [==============================] - 45s 2ms/step - loss: 0.2835 - accuracy: 1.0000 - val_loss: 0.2834 - val_accuracy: 1.0000
+
+Epoch 00088: val_loss improved from 0.28352 to 0.28343, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 89/100
+
+Epoch 00089: CosineAnnealingScheduler setting learning rate to 0.004476063948531559.
+25045/25045 [==============================] - 46s 2ms/step - loss: 0.2834 - accuracy: 1.0000 - val_loss: 0.2833 - val_accuracy: 1.0000
+
+Epoch 00089: val_loss improved from 0.28343 to 0.28335, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 90/100
+
+Epoch 00090: CosineAnnealingScheduler setting learning rate to 0.00392640193676584.
+25045/25045 [==============================] - 46s 2ms/step - loss: 0.2833 - accuracy: 1.0000 - val_loss: 0.2833 - val_accuracy: 1.0000
+
+Epoch 00090: val_loss improved from 0.28335 to 0.28328, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 91/100
+
+Epoch 00091: CosineAnnealingScheduler setting learning rate to 0.0034227024433899004.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.2833 - accuracy: 1.0000 - val_loss: 0.2832 - val_accuracy: 1.0000
+
+Epoch 00091: val_loss improved from 0.28328 to 0.28321, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 92/100
+
+Epoch 00092: CosineAnnealingScheduler setting learning rate to 0.002965462558991324.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.2832 - accuracy: 1.0000 - val_loss: 0.2832 - val_accuracy: 1.0000
+
+Epoch 00092: val_loss improved from 0.28321 to 0.28316, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 93/100
+
+Epoch 00093: CosineAnnealingScheduler setting learning rate to 0.0025551335241327674.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.2831 - accuracy: 1.0000 - val_loss: 0.2831 - val_accuracy: 1.0000
+
+Epoch 00093: val_loss improved from 0.28316 to 0.28311, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 94/100
+
+Epoch 00094: CosineAnnealingScheduler setting learning rate to 0.0021921202840320076.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.2831 - accuracy: 1.0000 - val_loss: 0.2831 - val_accuracy: 1.0000
+
+Epoch 00094: val_loss improved from 0.28311 to 0.28307, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 95/100
+
+Epoch 00095: CosineAnnealingScheduler setting learning rate to 0.0018767810889299083.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.2831 - accuracy: 1.0000 - val_loss: 0.2830 - val_accuracy: 1.0000
+
+Epoch 00095: val_loss improved from 0.28307 to 0.28303, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 96/100
+
+Epoch 00096: CosineAnnealingScheduler setting learning rate to 0.001609427140540686.
+25045/25045 [==============================] - 47s 2ms/step - loss: 0.2830 - accuracy: 1.0000 - val_loss: 0.2830 - val_accuracy: 1.0000
+
+Epoch 00096: val_loss improved from 0.28303 to 0.28300, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 97/100
+
+Epoch 00097: CosineAnnealingScheduler setting learning rate to 0.0013903222849333506.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2830 - accuracy: 1.0000 - val_loss: 0.2830 - val_accuracy: 1.0000
+
+Epoch 00097: val_loss improved from 0.28300 to 0.28298, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 98/100
+
+Epoch 00098: CosineAnnealingScheduler setting learning rate to 0.0012196827521475401.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2830 - accuracy: 1.0000 - val_loss: 0.2830 - val_accuracy: 1.0000
+
+Epoch 00098: val_loss improved from 0.28298 to 0.28296, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 99/100
+
+Epoch 00099: CosineAnnealingScheduler setting learning rate to 0.0010976769428005578.
+25045/25045 [==============================] - 48s 2ms/step - loss: 0.2830 - accuracy: 1.0000 - val_loss: 0.2829 - val_accuracy: 1.0000
+
+Epoch 00099: val_loss improved from 0.28296 to 0.28293, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+Epoch 100/100
+
+Epoch 00100: CosineAnnealingScheduler setting learning rate to 0.0010244252618962857.
+25045/25045 [==============================] - 49s 2ms/step - loss: 0.2829 - accuracy: 1.0000 - val_loss: 0.2829 - val_accuracy: 1.0000
+
+Epoch 00100: val_loss improved from 0.28293 to 0.28293, saving model to models\emotions_vgg8_arcface_3d\model.hdf5
+3137/3137 [==============================] - 6s 2ms/step
+Test loss: 0.28293265059832595
+Test accuracy: 1.0

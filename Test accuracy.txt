@@ -1,0 +1,6 @@
+3137/3137 [==============================] - 5s 1ms/step
+
+Test result: 72.777 loss: 1.366
+
+Original paper accuracy: VGG-VD-16 VGGFaces 72.05% 
+https://arxiv.org/pdf/1610.02255.pdf
